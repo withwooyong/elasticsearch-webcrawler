@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+/* clear float */
+.clear:after{content:'';display:block;clear:both}
+
+/* form */
+.inp_txt{box-sizing:border-box;width:100%;padding:0 8px;border:1px solid transparent}
+.inp_txt-default{height:31px;border-color:#ddd}
+.inp_txt-tel{width:50px;text-align:center}
+.inp_txt-email{width:100px}
+
+.select{border:1px solid transparent}
+.select-default{height:31px;border-color:#ddd}
+
+/* Contents Box */
+.box{position:relative;margin-bottom:20px;border-top:3px solid #d2d6de;box-shadow:1px 1px 3px rgba(0,0,0,.1);background-color:#fff}
+.box_header, .box_footer{padding:15px}
+.box_header h3{float:left;font-size:20px}
+.box_tools{float:right}
+
+/* Button */
+.btn{position:relative;padding:6px 12px;cursor:pointer;border:1px solid transparent;border-radius:3px}
+.btn:first-child{margin-left:0}
+.btn-default{border-color:#ddd;background-color:#f4f4f4}
+.btn-default:hover{border-color:#adadad;background-color:#e7e7e7}
+.btn-primary{color:#fff;border-color:#367fa9;background-color:#3c8dbc}
+.btn-primary:hover{border-color:#204d74;background-color:#286090}
+
+/* Button-Icon */
+.btn_icon{text-indent:-10000px;background-position:50% 50%;background-repeat:no-repeat}
+.btn_icon-search{background-image:url(../images/common/ic_search.png)}
+
+/* Align */
+.al-center{text-align:center}
+.al-left{text-align:left}
+.al-right{text-align:right}
+.pull-left{float:left}
+.pull-right{float:right}
+
+/* Icon */
+.ic{}
+.ic-user{padding-left:32px;background:url(../images/common/ic_profile.png) 0 0 no-repeat}
+
+/* Title */
+.title_area{margin-bottom:20px;color:#333}
+.title_area h2{font-size:24px}
+.title_area h3{font-size:20px}
+.title_area h4{font-size:16px}
+
+/* Table */
+.table{border-top:1px solid #f4f4f4}
+.table thead th, .table tbody td{border-bottom:1px solid #f4f4f4;border-left:1px solid #f4f4f4}
+.table thead th:first-child, .table tbody td:first-child{border-left:0}
+.table thead th{height:38px;color:#333}
+.table tbody td{padding:12px}
+.table-bordered{border:1px solid #f4f4f4}
+
+/* Paginate */
+.paginate a{display:inline-block;vertical-align:top;width:26px;height:28px;line-height:28px;text-align:center;font-size:12px;border:1px solid #ddd;background-color:#fafafa}
+.paginate a:hover, .paginate a.active{background-color:#eee}
+
+/* Tab */
+.tab_box{margin-bottom:20px;background-color:#fff;box-shadow:1px 1px 3px rgba(0,0,0,.1)}
+.nav_tab{border-bottom:1px solid #f4f4f4}
+.nav_tab li{float:left;margin-bottom:-1px;border-bottom:1px solid transparent;border-right:1px solid #f4f4f4}
+.nav_tab li a{display:block;padding:0 20px;height:45px;line-height:42px;text-align:center;border-top:3px solid transparent}
+.nav_tab li a:hover{color:#999}
+.nav_tab li.active{border-bottom-color:#fff}
+.nav_tab li.active a{border-top-color:#3c8dbc}
+.nav_tab li.active a:hover{color:inherit}
+.tab_body{padding:15px}
+.tab_footer{padding:0 15px 15px}
+
+/* Form */
+.form_field{padding:20px;margin-bottom:20px;border-top:3px solid #d2d6de;box-shadow:1px 1px 3px rgba(0,0,0,.1);background-color:#fff}
+.form_group{margin-top:20px}
+.form_group:first-child{margin-top:0}
+.form_group dt{margin-bottom:10px}
+.form_msg{margin-top:5px}
+.form_msg em{font-size:12px;color:#f00}
+.form_footer{margin-top:20px}
+.form_footer_btn .btn{margin-left:5px}
+.form_footer_btn .btn:first-child{margin-left:0}
+.form_group-horizontal dt{float:left;margin-right:20px}
+.form_group-horizontal dd{float:left;margin-left:12px}
+.form_group-horizontal dd:first-of-type{margin-left:0}
+
+/* Form-input-group */
+.inp_group select, .inp_group input, .inp_group .inp_group_btn{float:left}
+.inp_group select{margin-right:8px}
+.inp_group input{width:auto;border-right:0}
+.inp_group_btn .btn{border-top-left-radius:0;border-bottom-left-radius:0}

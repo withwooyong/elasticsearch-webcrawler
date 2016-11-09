@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- configuration file for LogBack (slf4J implementation)
+See here for more details: http://gordondickens.com/wordpress/2013/03/27/sawing-through-the-java-loggers/ -->
+<configuration scan="true" scanPeriod="30 seconds">
+
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contextListener>
+
+    <!-- To enable JMX Management -->
+    <jmxConfigurator/>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+        	<pattern>%-5level %d{HH:mm:ss.SSS} [%thread] %logger[%method:%line] - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>webapp.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- 파일이 하루에 한개씩 생성된다 -->
+            <fileNamePattern>%d{yyyy-MM-dd}.log</fileNamePattern>
+ 
+            <!-- maxHIstory 설정은 위 부분에 롤링 정책에 따라 적용되 된다고 보면된다.
+             위 설정데로 라면 30일이 지난 파일은 삭제가 된다.-->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy> 
+        <encoder>
+        	<pattern>%-5level %d{HH:mm:ss.SSS} [%thread] %logger[%method:%line] - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+<!--     <include resource="org/springframework/boot/logging/logback/base.xml" /> -->
+<!--     <logger name="guru.springframework.controllers" level="WARN" additivity="false"> -->
+<!--         <appender-ref ref="CONSOLE"/> -->
+<!--         <appender-ref ref="FILE"/> -->
+<!--     </logger> -->
+	<logger name="jdbc" level="OFF" />
+	<logger name="jdbc.sqltiming" level="DEBUG" />
+	<logger name="org.springframework.web" level="ERROR"/>
+    <logger name="org.thymeleaf" level="INFO"/>
+    <logger name="org.hibernate.SQL" level="INFO"/>
+    <logger name="org.quartz.core" level="INFO"/>
+    <logger name="org.h2.server.web" level="INFO"/>
+	     
+    <root level="INFO">
+        <appender-ref ref="console"/>
+<!--         <appender-ref ref="file"/> -->
+    </root>
+</configuration>

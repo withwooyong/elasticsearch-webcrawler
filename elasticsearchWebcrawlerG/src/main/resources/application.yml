@@ -1,0 +1,13 @@
+spring:
+  thymeleaf:
+    cache: false    
+    check-template: false
+    check-template-location: false
+    prefix: /views/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    content-type: text/html;charset=UTF-8
+  data:
+    elasticsearch:
+      cluster-nodes: 119.149.188.226:9300

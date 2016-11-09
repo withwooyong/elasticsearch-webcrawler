@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../scripts/jquery-1.11.0.min.js"></script>
+    <script src="../scripts/ui.js"></script>
+</head>
+<body>
+
+<div id="wrap">
+
+    <div id="aside">
+        <h1><a href="#">통합 CMS</a></h1>
+        <div class="aside_user">
+            <div class="aside_user_id ic ic-user">관리자명</div>
+        </div>
+        <div class="aside_gnb">
+            <ul class="aside_gnb_list" id="aside_gnb_list">
+                <li>
+                    <a>메뉴1</a>
+                    <ul>
+                        <li><a href="template.html">메뉴1_1</a></li>  <!-- href로 활성화 처리 되어있음 -->
+                        <li><a href="#">메뉴1_2</a></li>
+                        <li><a href="#">메뉴1_3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">메뉴2</a></li>
+                <li>
+                    <a>메뉴3</a>
+                    <ul>
+                        <li><a href="#">메뉴3_1</a></li>
+                        <li><a href="#">메뉴3_2</a></li>
+                        <li><a href="#">메뉴3_3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>메뉴4</a>
+                    <ul>
+                        <li><a href="#">메뉴4_1</a></li>
+                        <li><a href="#">메뉴4_2</a></li>
+                        <li><a href="#">메뉴4_3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>메뉴5</a>
+                    <ul>
+                        <li><a href="#">메뉴5_1</a></li>
+                        <li><a href="#">메뉴5_2</a></li>
+                        <li><a href="#">메뉴5_3</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- //aside -->
+
+    <div id="container">
+
+        <div id="header">
+            <div class="aside_toggle" id="aside_toggle"><a href="#">메뉴 확장</a></div>
+        </div>
+        <!-- //header -->
+
+        <div id="contents">
+
+            <div class="title_area">
+                <h2>타이틀 영역</h2>
+                <h3>타이틀 영역</h3>
+                <h4>타이틀 영역</h4>
+            </div>
+            <!-- //title_area -->
+
+            <div class="box">
+
+                <div class="box_header clear">
+
+                    <h3>테이블 타이틀</h3>
+
+                    <div class="box_tools">
+
+                        <div class="inp_group clear">
+                            <select name="" id="" class="select select-default">
+                                <option value="">전체</option>
+                                <option value="">제목</option>
+                                <option value="">본문</option>
+                            </select>
+                            <input type="text" name="" value="" class="inp_txt inp_txt-default"/>
+                            <div class="inp_group_btn">
+                                <button type="submit" class="btn btn-default btn_icon btn_icon-search">검색</button>
+                            </div>
+                        </div>
+                        <!-- //inp_group -->
+
+                    </div>
+                    <!-- //box_tools -->
+
+                </div>
+                <!-- //box_header -->
+
+                <table class="table">
+                    <colgroup>
+                        <col style="width:30%">
+                        <col style="width:30%">
+                        <col style="width:40%">
+                    </colgroup>
+                    <thead>
+                    <tr>
+                        <th>제목</th>
+                        <th>내용</th>
+                        <th>조회수</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <!-- 기본 정렬 left -->
+                        <td class="al-left">simple</td>
+                        <td class="al-center">테이블 템플릿</td>
+                        <td class="al-right">100</td>
+                    </tr>
+                    <tr>
+                        <!-- 기본 정렬 left -->
+                        <td class="al-left">simple</td>
+                        <td class="al-center">테이블 템플릿</td>
+                        <td class="al-right">100</td>
+                    </tr>
+                    <tr>
+                        <!-- 기본 정렬 left -->
+                        <td class="al-left">simple</td>
+                        <td class="al-center">테이블 템플릿</td>
+                        <td class="al-right">100</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <!-- //table -->
+
+                <div class="box_footer clear">
+                    <div class="paginate pull-right">
+                        <a href="#">&lt;&lt;</a>
+                        <a href="#">&lt;</a>
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">&gt;</a>
+                        <a href="#">&gt;&gt;</a>
+                    </div>
+                </div>
+                <!-- //box_footer -->
+
+            </div>
+            <!-- //box -->
+
+            <div class="tab_box">
+
+                <ul class="nav_tab clear">
+                    <li class="active"><a href="#">Tab1</a></li>
+                    <li><a href="#">Tab2</a></li>
+                    <li><a href="#">Tab3</a></li>
+                </ul>
+                <!-- //nav_tab -->
+
+                <div class="tab_body">
+
+                    <table class="table table-bordered">
+                        <colgroup>
+                            <col style="width:30%">
+                            <col style="width:30%">
+                            <col style="width:40%">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th>제목</th>
+                            <th>내용</th>
+                            <th>조회수</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <!-- 기본 정렬 left -->
+                            <td class="al-left">simple</td>
+                            <td class="al-center">테이블 템플릿</td>
+                            <td class="al-right">100</td>
+                        </tr>
+                        <tr>
+                            <!-- 기본 정렬 left -->
+                            <td class="al-left">simple</td>
+                            <td class="al-center">테이블 템플릿</td>
+                            <td class="al-right">100</td>
+                        </tr>
+                        <tr>
+                            <!-- 기본 정렬 left -->
+                            <td class="al-left">simple</td>
+                            <td class="al-center">테이블 템플릿</td>
+                            <td class="al-right">100</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!-- //table -->
+
+                </div>
+                <!-- //tab_body -->
+
+                <div class="tab_footer clear">
+
+                    <div class="paginate pull-right">
+                        <a href="#">&lt;&lt;</a>
+                        <a href="#">&lt;</a>
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">&gt;</a>
+                        <a href="#">&gt;&gt;</a>
+                    </div>
+                    <!-- //paginate -->
+
+                </div>
+                <!-- //tab_footer -->
+
+            </div>
+            <!-- //tab_box -->
+
+            <div class="form_field">
+                <div class="form_group">
+                    <dl>
+                        <dt><label for="">* 이름</label></dt>
+                        <dd><input type="text" placeholder="이름" id="" class="inp_txt inp_txt-default"/></dd>
+                    </dl>
+                    <p class="form_msg"><em>* 필수 입력 항목 입니다.</em></p>
+                </div>
+                <div class="form_group">
+                    <dl>
+                        <dt><label for="">비밀번호</label></dt>
+                        <dd><input type="password" placeholder="비밀번호" id="" class="inp_txt inp_txt-default"/></dd>
+                    </dl>
+                </div>
+                <div class="form_group">
+                    <dl>
+                        <dt><label for="">전화번호</label></dt>
+                        <dd><input type="text" placeholder="전화번호" id="" class="inp_txt inp_txt-default"/></dd>
+                    </dl>
+                </div>
+                <div class="form_group">
+                    <dl>
+                        <dt><label for="">이메일</label></dt>
+                        <dd><input type="text" placeholder="이메일" id="" class="inp_txt inp_txt-default"/></dd>
+                    </dl>
+                </div>
+                <div class="form_group form_group-horizontal">
+                    <dl class="clear">
+                        <dt>성별</dt>
+                        <dd><input type="radio" id=""/> <label for="">남</label></dd>
+                        <dd><input type="radio" id=""/> <label for="">여</label></dd>
+                    </dl>
+                </div>
+                <div class="form_group form_group-horizontal">
+                    <dl class="clear">
+                        <dt>관심 사항</dt>
+                        <dd><input type="checkbox" id=""/> <label for="">항목1</label></dd>
+                        <dd><input type="checkbox" id=""/> <label for="">항목2</label></dd>
+                    </dl>
+                </div>
+                <div class="form_group">
+                    <dl>
+                        <dt>첨부파일</dt>
+                        <dd><input type="file"/></dd>
+                    </dl>
+                </div>
+                <div class="form_footer clear">
+                    <div class="form_footer_btn pull-right">
+                        <button class="btn btn-primary">확인</button>
+                        <button class="btn btn-default">취소</button>
+                    </div>
+                </div>
+            </div>
+            <!-- //form_field -->
+
+        </div>
+        <!-- //contents-->
+
+    </div>
+    <!-- //container-->
+
+</div>
+<!-- //wrap -->
+
+</body>
+</html>

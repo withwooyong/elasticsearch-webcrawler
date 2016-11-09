@@ -1,0 +1,128 @@
+# $ curl -XPOST http://localhost:9200/_bulk?pretty --data-binary @bulk_1
+
+{ "index": { "_index": "books", "_type": "book", "_id": "1" } }
+{ "title": "Elasticsearch Guide", "author": "Kim", "pages": 250 }
+{ "index": { "_index": "books", "_type": "book", "_id": "2" } }
+{ "title": "Elasticsearch Easy Guide", "author": "Lee", "pages": 300 }
+
+curl -XPUT "http://119.149.188.226:9200/nmovie/?pretty" -d '
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0,
+    "index": {
+      "analysis": {
+        "tokenizer": {
+          "seunjeon_default_tokenizer": {
+            "type": "seunjeon_tokenizer",
+            "user_words": [
+              "낄끼빠빠,-100",
+              "버카충",
+              "abc마트"
+            ]
+          }
+        },
+        "analyzer": {
+          "korean": {
+            "type": "custom",
+            "tokenizer": "seunjeon_default_tokenizer"
+          }
+        }
+      }
+    }
+  },
+  "mappings": {
+    "article": {
+      "properties": {
+        "code": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "nameKo": {
+          "type": "string",
+          "analyzer": "korean"
+        },
+        "nameEn": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "ntzScore": {
+          "type": "double",
+          "index": "not_analyzed"
+        },
+        "spcScore": {
+          "type": "double",
+          "index": "not_analyzed"
+        },
+        "poster": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "genresName": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "countryName": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "duration": {
+          "type": "integer",
+          "index": "not_analyzed"
+        },
+        "releaseDate": {
+          "type": "long",
+          "index": "not_analyzed"
+        },
+        "story": {
+          "type": "string",
+          "analyzer": "korean"
+        },
+        "actorsCode": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "actorsKo": {
+          "type": "string",
+          "analyzer": "korean"
+        },
+        "actorsEn": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "actorsImg": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "directorCode": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "directorKo": {
+          "type": "string",
+          "analyzer": "korean"
+        },
+        "directorEn": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "directorImg": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "grade": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "importer": {
+          "type": "string",
+          "analyzer": "korean"
+        },
+        "distributor": {
+          "type": "string",
+          "analyzer": "korean"
+        }
+      }
+    }
+  }
+}'

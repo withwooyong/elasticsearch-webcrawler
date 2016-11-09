@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.thymeleaf.org" xmlns:th="http://www.thymeleaf.org">      
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<title></title>
+<link rel="stylesheet" href="../css/reset.css"></link>
+<link rel="stylesheet" href="../css/layout.css"></link>
+<link rel="stylesheet" href="../css/style.css"></link>
+<script src="../scripts/jquery-1.11.0.min.js"></script>
+<script src="../scripts/ui.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+//     setInterval(function() {
+//         $( "#listTable" ).load( "list.html #listTable" );
+//     }, 3000);
+});
+
+</script>
+</head>
+
+<body>
+
+<div id="wrap">
+
+    <div id="aside">
+        <h1><a href="#">통합 CMS</a></h1>
+        <div class="aside_user">
+            <div class="aside_user_id ic ic-user">관리자명</div>
+        </div>
+        <div class="aside_gnb">
+            <ul class="aside_gnb_list" id="aside_gnb_list">
+                <li>
+                    <a>메뉴1</a>
+                    <ul>
+                        <li><a href="list.html">메뉴1_1</a></li>  <!-- href로 활성화 처리 되어있음 -->
+                        <li><a href="#">메뉴1_2</a></li>
+                        <li><a href="#">메뉴1_3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">메뉴2</a></li>
+                <li>
+                    <a>메뉴3</a>
+                    <ul>
+                        <li><a href="#">메뉴3_1</a></li>
+                        <li><a href="#">메뉴3_2</a></li>
+                        <li><a href="#">메뉴3_3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>메뉴4</a>
+                    <ul>
+                        <li><a href="#">메뉴4_1</a></li>
+                        <li><a href="#">메뉴4_2</a></li>
+                        <li><a href="#">메뉴4_3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>메뉴5</a>
+                    <ul>
+                        <li><a href="#">메뉴5_1</a></li>
+                        <li><a href="#">메뉴5_2</a></li>
+                        <li><a href="#">메뉴5_3</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- //aside -->
+
+    <div id="container">
+
+        <div id="header">
+            <div class="aside_toggle" id="aside_toggle"><a href="#">메뉴 확장</a></div>
+        </div>
+        <!-- //header -->
+
+		<div id="contents">
+		      
+		    <div class="title_area">
+                <h2>elasticsearch</h2>                
+            </div>
+            
+<!--             <form action="#" th:action="@{/esearch/searchMovie/}" method="get"> -->
+<!-- 		        <p>Id: <input type="text" th:field="*{kwd}" /></p> -->
+<!-- 		        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p> -->
+<!-- 		    </form> -->
+            
+<!--             <form th:action="@{'/transmanager/delete/{correlation_ID}'(correlation_ID=${list.correlation_ID})}" th:method="delete" th:if="${list.progress == 0}">                 -->
+<!--                     <input class="btn btn-danger" type="submit" value="삭제"/> -->
+<!--                 </form> -->
+            
+            <form th:action="@{/esearch/crawlerMovie}" class="form-horizontal" th:method="get">
+                    <div class="form-group">
+                        <div class="col-md-10">
+                            <input type="text" id="code" name="code" class="form-control" th:value="*{code}" />
+                            <button type="submit" class="btn btn-primary">수집</button>
+                        </div>
+                    </div>              
+            </form>    
+            <form th:action="@{/esearch/searchMovie}" class="form-horizontal" th:method="get">
+		            <div class="form-group">
+		                <div class="col-md-10">
+		                    <input type="text" id="kwd" name="kwd" class="form-control" th:value="*{kwd}" />
+		                    <button type="submit" class="btn btn-primary">검색</button>
+		                </div>
+		            </div>		        
+		    </form>
+            
+            <!-- //title_area -->
+                
+<!-- 		    <div class="form_field"> -->
+						    
+			<div class="box">
+                <table id="listTable" class="table">
+                    <thead>
+                    <tr>
+                        <th style="display:none;">ID</th>
+                        <th>코드</th>
+                        <th>한글명</th>
+                        <th>영문명</th>
+                        <th>관람객평점</th>
+                        <th>평론가평점</th>
+                        <th>포스터</th>
+                        <th>장르명</th>
+                        <th>국가</th>
+                        <th>상영시간</th>
+                        <th>상영일</th>
+                        <th>줄거리</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="movieDTO : ${movieDTOs}">
+                        <td style="display:none;" th:text="${movieDTO.id}"></td>
+                        <td th:text="${movieDTO.code}"></td>
+                        <td th:text="${movieDTO.nameKo}"></td>
+                        <td th:text="${movieDTO.nameEn}"></td>
+                        <td th:text="${movieDTO.ntzScore}"></td>
+                        <td th:text="${movieDTO.spcScore}"></td>
+                        <td th:if="${#strings.substring(movieDTO.code,0,1) == 'M'}"><img th:src="@{'http://image.tving.com' + ${movieDTO.poster}}" style="width:80px;height:120px" th:alt="poster" /></td>
+                        <td th:if="${#strings.substring(movieDTO.code,0,1) != 'M'}"><img th:src="@{'../home/tvingadmin/server/images/' + ${movieDTO.poster}}" style="width:80px;height:120px" th:alt="poster" /></td>
+<!--                         <td th:if="${list.progress == 0}"><img th:src="@{'../' + ${movieDTO.poster}}" style="width:80px;height:120px" th:alt="poster" /></td> -->
+                        <td th:text="${movieDTO.genresName}"></td>
+                        <td th:text="${movieDTO.countryName}"></td>
+                        <td th:text="${movieDTO.duration}"></td>                        
+                        <td th:text="${movieDTO.releaseDate}"></td>
+                        <td th:text="${movieDTO.story}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <!-- //table -->
+            </div>
+            <!-- //box -->
+<!--             </div> -->
+            
+           </div>
+		</div> <!-- end contents -->
+	</div> <!-- end container -->
+</body>
+</html>
