@@ -1,7 +1,6 @@
 # elasticsearchWebcrawlerG
 
-## elasticsearchWebcrawlerG 
-# ==elasticsearch 활용 검색엔진 ==
+# ==elasticsearch 활용 검색 ==
 PP 사에서 메타수급 시 출연진, 줄거리 등의 부족한 메타를 포털에서 수집해서 자동화시킬 수 있는지 확인한다.
 elasticsearch 에 한글형태소를 적용하여 한글 검색이 가능한지 확인한다.
 
